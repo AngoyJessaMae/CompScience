@@ -53,7 +53,7 @@ def predict_naive_bayes(test_data, class_probabilities, feature_probabilities):
                 if feature_value in feature_probabilities[feature_idx][label]:
                     probability *= feature_probabilities[feature_idx][label][feature_value]
                 else:
-                    probability *= 0  # Laplace smoothing can be added here
+                    probability *= 0 
             
             class_scores[label] = probability
         
@@ -62,8 +62,6 @@ def predict_naive_bayes(test_data, class_probabilities, feature_probabilities):
     return predictions
 
 def main():
-    # Sample dataset
-    # Columns: Color, Toughness, Fungus, Appearance, Poisonous
     training_data = [
         ["Red", "Hard", "Yes", "Smooth", "Poisonous"],
         ["Green", "Soft", "No", "Rough", "Not Poisonous"],
@@ -81,10 +79,8 @@ def main():
         ["Red", "Soft", "Yes", "Rough", "Poisonous"]
     ]
 
-    # Train Naive Bayes Model
     class_probs, feature_probs = train_naive_bayes(training_data)
 
-    # Interactive Test Data Input
     test_data = []
     num_tests = int(input("Enter the number of test instances: "))
     for _ in range(num_tests):
