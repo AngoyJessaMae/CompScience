@@ -1,5 +1,4 @@
 def train_naive_bayes(data):
-    """ Trains a Naive Bayes classifier manually """
     class_probabilities = {}
     feature_probabilities = {}
     
